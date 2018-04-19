@@ -12,8 +12,8 @@ export default class LoadMore extends React.Component {
         renderList: React.PropTypes.element.isRequired,
         onClickLoadMore: React.PropTypes.func,
         onRefresh: React.PropTypes.func,
-        isRefreshing: React.PropTypes.bool,
-        isNeedRefresh: React.PropTypes.bool,
+        // isRefreshing: React.PropTypes.bool,
+        // isNeedRefresh: React.PropTypes.bool,
         isLastPage: React.PropTypes.bool
     }
 
