@@ -1,14 +1,11 @@
 {
   "name": "react-native-loadmore",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "a loadmore module for list",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "dist/"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fengtianhe/react-native-loadmore.git"

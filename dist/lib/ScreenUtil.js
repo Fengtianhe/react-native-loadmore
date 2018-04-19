@@ -1,7 +1,7 @@
 import {
+    Dimensions,
     PixelRatio,
 } from 'react-native';
-import Dimensions from 'Dimensions';
 
 export var screenW = Dimensions.get('window').width;
 export var screenH = Dimensions.get('window').height;
