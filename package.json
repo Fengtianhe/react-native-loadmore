@@ -1,0 +1,26 @@
+{
+  "name": "react-native-loadmore",
+  "version": "0.1.0",
+  "description": "a loadmore module for list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fengtianhe/react-native-loadmore.git"
+  },
+  "keywords": [
+    "loadmore",
+    "React Native"
+  ],
+  "author": "fengtianhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fengtianhe/react-native-loadmore/issues"
+  },
+  "homepage": "https://github.com/Fengtianhe/react-native-loadmore#readme"
+}
