@@ -19,7 +19,8 @@ const LoadMore = createReactClass({
 		return {
 			isRefreshing: false,
 			isNeedRefresh: true,
-			isLastPage: false
+			isLastPage: false,
+			loadMoreType: 'click'
 		}
 	},
 
@@ -34,9 +35,9 @@ const LoadMore = createReactClass({
 		let y = event.nativeEvent.contentOffset.y;
 		let height = event.nativeEvent.layoutMeasurement.height;
 		let contentHeight = event.nativeEvent.contentSize.height;
-		// console.log('offsetY-->' + y);
-		// console.log('height-->' + height);
-		// console.log('contentHeight-->' + contentHeight);
+		console.log('offsetY-->' + y);
+		console.log('height-->' + height);
+		console.log('contentHeight-->' + contentHeight);
 		if (y + height >= contentHeight) {
 			this.props.onRefresh && this.props.onRefresh()
 		}

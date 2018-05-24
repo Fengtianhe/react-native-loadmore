@@ -1,6 +1,6 @@
 {
   "name": "react-native-loadmore",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "a loadmore module for list",
   "main": "index.js",
   "scripts": {
