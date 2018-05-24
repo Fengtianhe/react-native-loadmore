@@ -41,7 +41,7 @@ const LoadMore = createReactClass({
 		// console.log('height-->' + height);
 		// console.log('contentHeight-->' + contentHeight);
 		if (y + height >= contentHeight) {
-			this.props.onRefresh && this.props.onRefresh()
+			this.props.onLoadMore && this.props.onLoadMore()
 		}
 	},
 
