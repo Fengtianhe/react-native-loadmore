@@ -1,17 +1,19 @@
-import {RefreshControl, ScrollView} from "react-native";
+import React from 'react'
+import {RefreshControl, ScrollView, View} from "react-native";
 import LoadingMore from "./lib/LoadingMore";
-import PropTypes from 'prop-types';
 
+const PropTypes = require('prop-types');
 const createReactClass = require('create-react-class');
 
 
 const LoadMore = createReactClass({
 	propTypes: {
-		renderList: PropTypes.element.isRequired,
+		renderList: PropTypes.any.isRequired,
 		onClickLoadMore: PropTypes.func,
 		onRefresh: PropTypes.func.isRequired,
-		isLastPage: PropTypes.bool,
-		loadMoreType: PropTypes.oneOf(['click', 'scroll'])
+		isLastPage: PropTypes.bool.isRequired,
+		loadMoreType: PropTypes.oneOf(['click', 'scroll']),
+		onLoadMore: PropTypes.func
 		// isRefreshing: React.PropTypes.bool,
 		// isNeedRefresh: React.PropTypes.bool,
 	},
@@ -29,15 +31,15 @@ const LoadMore = createReactClass({
 	 * @private
 	 */
 	_onScroll(event) {
-		if (this.props.isLastPage) {
+		if (this.props.isLastPage || this.props.loadMoreType !== 'scroll') {
 			return;
 		}
 		let y = event.nativeEvent.contentOffset.y;
 		let height = event.nativeEvent.layoutMeasurement.height;
 		let contentHeight = event.nativeEvent.contentSize.height;
-		console.log('offsetY-->' + y);
-		console.log('height-->' + height);
-		console.log('contentHeight-->' + contentHeight);
+		// console.log('offsetY-->' + y);
+		// console.log('height-->' + height);
+		// console.log('contentHeight-->' + contentHeight);
 		if (y + height >= contentHeight) {
 			this.props.onRefresh && this.props.onRefresh()
 		}
@@ -76,12 +78,12 @@ const LoadMore = createReactClass({
 						progressBackgroundColor="#ffffff"
 					/>
 				}
-				// onScroll={this._onScroll.bind(this)}
+				onScroll={nativeEvent => this._onScroll(nativeEvent)}
 				scrollEventThrottle={80}
 			>
 				{this.props.renderList}
 				{/*尾部上拉加载更多view*/}
-				{this._renderLoadMore()}
+				{this.props.loadMoreType == 'click' ? this._renderLoadMore() : (<View/>)}
 			</ScrollView>
 		)
 	}
