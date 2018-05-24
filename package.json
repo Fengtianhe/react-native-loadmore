@@ -1,6 +1,6 @@
 {
   "name": "react-native-loadmore",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "a loadmore module for list",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/Fengtianhe/react-native-loadmore/issues"
   },
-  "homepage": "https://github.com/Fengtianhe/react-native-loadmore#readme"
+  "homepage": "https://github.com/Fengtianhe/react-native-loadmore#readme",
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "create-react-class": "^15.6.2"
+  }
 }
