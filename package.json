@@ -1,7 +1,7 @@
 {
   "name": "react-native-loadmore",
-  "version": "0.2.1",
-  "description": "a loadmore module for list",
+  "version": "0.2.2",
+  "description": "a loadmore module for list of react native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

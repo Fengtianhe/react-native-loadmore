@@ -40,8 +40,15 @@ const LoadMore = createReactClass({
 		// console.log('offsetY-->' + y);
 		// console.log('height-->' + height);
 		// console.log('contentHeight-->' + contentHeight);
-		if (y + height >= contentHeight) {
-			this.props.onLoadMore && this.props.onLoadMore()
+    if (y + height >= contentHeight && this.props.onLoadMore) {
+      // this.props.onLoadMore && this.props.onLoadMore()
+      return (
+        <LoadingMore
+          onLoading={() => {
+            this.props.onLoadMore()
+          }}
+        />
+      );
 		}
 	},
 
