@@ -2,7 +2,7 @@ import React from 'react'
 import {RefreshControl, ScrollView, View} from "react-native";
 import LoadingMore from "./lib/LoadingMore";
 import PropTypes from 'prop-types'
-
+import * as ScreenUtils from './lib/ScreenUtil';
 
 export default class LoadMore extends React.Component {
   static propTypes = {
@@ -16,8 +16,8 @@ export default class LoadMore extends React.Component {
     indicatorText: PropTypes.string,
     loadMoreBtnText: PropTypes.string,
   }
-  
-  static propTypes = {
+  //
+  static defaultProps = {
     isRefreshing: false,
     isNeedRefresh: true,
     isLastPage: false,
@@ -70,6 +70,7 @@ export default class LoadMore extends React.Component {
   render () {
     return (
       <ScrollView
+        ref={'scrollView'}
         refreshControl={
           <RefreshControl
             refreshing={this.props.isRefreshing}
