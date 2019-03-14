@@ -14,8 +14,8 @@ or
 
 ## Params
 
-|key|type|required|default|desc|
-|---- |---- |---- |---- |---- |
+|key|type|required|default|desc|version|
+|---- |---- |---- |---- |---- |---- |
 |renderList|React Element|true||loadmore中显示的列表|
 |loadMoreType|String||'click'|下拉加载的形式\['click','scroll']|
 |renderList|React Element|true||loadmore中显示的列表|
@@ -26,3 +26,4 @@ or
 |isLoading|bool|true||是否是获取数据中|
 |indicatorText|bool||正在加载 ...|加载中的文本|
 |loadMoreBtnText|bool||点击加载更多 ...|点击加载的文本|
+|bottomLoadDistance|number||10|底部加载距离差值(为了解决部分手机滑到底部由于距离不够，触发不了加载事件)|^0.2.5|

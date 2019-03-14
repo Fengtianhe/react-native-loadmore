@@ -15,6 +15,7 @@ export default class LoadMore extends React.Component {
     isLoading: PropTypes.bool.isRequired,
     indicatorText: PropTypes.string,
     loadMoreBtnText: PropTypes.string,
+    bottomLoadDistance: PropTypes.number
   }
   //
   static defaultProps = {
@@ -23,7 +24,8 @@ export default class LoadMore extends React.Component {
     isLastPage: false,
     loadMoreType: 'click',
     indicatorText: '正在加载 ...',
-    loadMoreBtnText: '点击加载更多 ...'
+    loadMoreBtnText: '点击加载更多 ...',
+    bottomLoadDistance: 10 // 为了解决部分手机滑到底部由于距离不够，触发不了加载事件
   }
   
   /**
@@ -40,8 +42,8 @@ export default class LoadMore extends React.Component {
     // console.log('offsetY-->' + y);
     // console.log('height-->' + height);
     // console.log('contentHeight-->' + contentHeight);
-    
-    if (y + height >= contentHeight && !this.props.isLoading) {
+  
+    if (y + height + this.props.bottomLoadDistance >= contentHeight && !this.props.isLoading) {
       this.props.onLoadMore && this.props.onLoadMore()
     }
   }
