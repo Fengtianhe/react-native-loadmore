@@ -15,7 +15,7 @@ export default class LoadMore extends React.Component {
     indicatorText: PropTypes.string,
     loadMoreBtnText: PropTypes.string,
     bottomLoadDistance: PropTypes.number,
-    scrollViewStyle: PropTypes.object()
+    scrollViewStyle: PropTypes.object
   }
   //
   static defaultProps = {
