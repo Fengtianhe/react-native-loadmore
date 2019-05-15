@@ -2,7 +2,6 @@ import React from 'react'
 import {RefreshControl, ScrollView, View} from "react-native";
 import LoadingMore from "./lib/LoadingMore";
 import PropTypes from 'prop-types'
-import * as ScreenUtils from './lib/ScreenUtil';
 
 export default class LoadMore extends React.Component {
   static propTypes = {
@@ -15,7 +14,8 @@ export default class LoadMore extends React.Component {
     isLoading: PropTypes.bool.isRequired,
     indicatorText: PropTypes.string,
     loadMoreBtnText: PropTypes.string,
-    bottomLoadDistance: PropTypes.number
+    bottomLoadDistance: PropTypes.number,
+    scrollViewStyle: PropTypes.object()
   }
   //
   static defaultProps = {
@@ -25,7 +25,8 @@ export default class LoadMore extends React.Component {
     loadMoreType: 'click',
     indicatorText: '正在加载 ...',
     loadMoreBtnText: '点击加载更多 ...',
-    bottomLoadDistance: 10 // 为了解决部分手机滑到底部由于距离不够，触发不了加载事件
+    bottomLoadDistance: 10, // 为了解决部分手机滑到底部由于距离不够，触发不了加载事件,
+    scrollViewStyle: {}
   }
   
   /**
@@ -88,6 +89,7 @@ export default class LoadMore extends React.Component {
         }
         onScroll={nativeEvent => this._onScroll(nativeEvent)}
         scrollEventThrottle={80}
+        style={[this.props.scrollViewStyle]}
       >
         {this.props.renderList}
         {/*尾部上拉加载更多view*/}

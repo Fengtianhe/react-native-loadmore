@@ -27,3 +27,4 @@ or
 |indicatorText|bool||正在加载 ...|加载中的文本|
 |loadMoreBtnText|bool||点击加载更多 ...|点击加载的文本|
 |bottomLoadDistance|number||10|底部加载距离差值(为了解决部分手机滑到底部由于距离不够，触发不了加载事件)|^0.2.5|
+|scrollViewStyle|style||||^0.2.6|
